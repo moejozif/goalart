@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header"><i class="far fas fa-tasks nav-icon"></i>&nbsp;&nbsp; <b>Projects Management</b></div>
+                    <div class="card-header"><i class="far fas fa-warehouse nav-icon"></i>&nbsp;&nbsp;Warehouse Management</div>
 
                     <div class="card-body">
                        Page
@@ -13,5 +13,4 @@
         </div>
     </div>
 </template>
-
 

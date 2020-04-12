@@ -86,7 +86,7 @@
 
                 <div class="links">
                     <a href="/home">Home</a>
-                    <a href="#">Grass</a>
+                    <a href="/tasks">Grass</a>
                     <a href="#">Gallery</a>
                     <a href="#">About</a>
                     <a href="#">Contact</a>

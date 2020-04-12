@@ -9,17 +9,61 @@ require('./bootstrap');
 window.Vue = require('vue');
 import VueRouter from 'vue-router'
 import profile from './components/profile.vue';
+import users from './components/users.vue';
 import projects from './components/projects.vue';
 import tasks from './components/tasks.vue';
 import dashboard from './components/dashboard.vue';
+import orders from './components/orders.vue';
+import warehouses from './components/warehouses.vue';
+import { Form, HasError, AlertError } from 'vform'
+import Swal from 'sweetalert2'
+import VueProgressBar from 'vue-progressbar'
+const options = {
+  color: '#bffaf3',
+  failedColor: '#874b4b',
+  thickness: '5px',
+  transition: {
+    speed: '0.2s',
+    opacity: '0.6s',
+    termination: 300
+  },
+  autoRevert: true,
+  location: 'left',
+  inverse: false
+}
+
+Vue.use(VueProgressBar, options)
+
 Vue.use(VueRouter)
-// const profile={ template: '<div>profile</div>' }
-// const page={ template: '<div>page</div>' }
+
+
+
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  onOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+window.Form=Form
+window.toast = Toast
+window.Swal = Swal
+window.fire=new Vue()
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)
 let routes = [
     { path: '/profile', component: profile},
+    { path: '/users', component: users},
     { path: '/projects', component: projects},
     { path: '/tasks', component: tasks},
     { path: '/dashboard', component: dashboard},
+    { path: '/warehouses', component: warehouses},
+    { path: '/orders', component: orders},
 ]
 /**
  * The following block of code may be used to automatically register your
